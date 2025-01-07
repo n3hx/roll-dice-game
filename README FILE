@@ -1,0 +1,37 @@
+Project Title: Twisted Dice Rolling
+
+Running Instruction: 
+	1. Users are asked to enter the number of faces(1-25).
+	2. Users are asked to enter the number of throws(1-500).
+	3. If numbers entered are beyond given range; an error message will be displayed and you will be asked to enter the correct numbers again.
+	4.The number of throws, the faces which are random numbers, and the occurrences are displayed on the screen.
+	5. Then users are asked if they want to play again. If you enter the any characters other than 'y' or 'n'; an error message will be displayed and you will be asked to enter the correct characters again.
+	6. Lastly, the current date and time will be displayed when the game is over.
+
+Project Description: 
+	The program starts by defining 4 header files: standard input/output, standard library, time: to read the current time and string: to read characters. 
+
+	The 'user_input' function will display the game introduction and rules, and  prompts the user to enter the number of faces they want within a range of 1 - 25 and number of time they want to roll the dice within the range of 1 - 500. This is being done using a while loop so that the users cannot enter values beyond these given limits.If the user inputs an invalid number, the program will display a warning message and prompt the user to input a valid number. Otherwise if there are no issues with the input values, the program will call the dice_roll(), occurrences(), and game_history() functions to start execution of the code.
+
+	The 'dice_roll' function uses the 'rand()'to generate random numbers and  increments the element of 'NumArray' that corresponds to the value of the roll. This allows the frequency of each possible outcome to be tracked. Then it uses a switch & case statement which is linked to 'Roll' to display the outcome of each throw's random number on the screen.
+	
+	The 'occurrences' function uses a for loop to calculate the percentage of occurrences of each face based on the number of throws that the user has input and print out the results.
+
+	The 'time_played' function displays the date and time when the game is stopped.
+
+	The 'play_again' function offers the users to choose the option whether they want to continue or to quit the game through a while loop and nested if, else statement. If the user wants to play again, this function calls the 'user_input' function. If the user decides to view history, the function calls 'view_history' function. Alternatively, if the user decide to exit the game; this function calls the 'time_played' function to record the date and time when the game was played. However if they put any other characters other than 'y' or 'n' or 'h', an error message will be displayed and the users will be asked to enter the appropriate characters again.
+	
+	The 'game_history' is a function that writes some information about the dice game to a file.The function will open the file "game_history.txt" and append some information to it, including the number of faces on the dice, the number of times it was thrown, and the number of occurrences of each face. If the file "game_history.txt" does not exist, it will be created else if the file already exists, it will be opened in append mode, so new information will be added to the end of the file.
+	
+	The 'view_history' is a function which reads and displays the contents of a file named "game_history.txt" on the console.
+	
+	The 'red', 'black', 'blue', 'yellow', 'cyan', 'purple', 'green' and 'white' are functions that change the color of the text printed on the terminal using ANSI escape codes.
+
+	The 'main' function declares the main variables, that are 'Faces', 'Throws'and 'NumArray'. Then calls the 'user_input'and 'play_again' functions.
+
+
+
+
+
+
+  
